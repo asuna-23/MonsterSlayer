@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  word-spacing: 2px; }
+
+html {
+  height: 100vh; }
+
+body {
+  height: inherit;
+  font-size: 14px;
+  font-family: "Bangers", cursive;
+  color: #3d3d3d; }
+
+#app {
+  height: inherit;
+  display: flex;
+  flex-direction: column; }
+  
+  #app header {
+    align-items: flex-end !important;
+    gap: 10px;
+    background-color: #C83B50;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+    #app header h1 {
+      letter-spacing: 3px; }
+      #app header h1 sub {
+        font-size: 35%;
+        background-color: #04a565;
+        color: #ffffff;
+        padding: 0 5px;
+        letter-spacing: 2.5px; }
+  #app main {
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem; }
+    #app main #img-versus {
+      width: 70px; }
+    #app main .health-bars-container {
+      grid-column-gap: 5rem;
+      grid-row-gap: 2rem; }
+      #app main .health-bars-container .health-bar-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto 1fr;
+        grid-row-gap: 0.75rem; }
+        #app main .health-bars-container .health-bar-container span {
+          width: min-content;
+          height: min-content;
+          align-self: self-end;
+          justify-self: self-end;
+          font-size: 130%; }
+        #app main .health-bars-container .health-bar-container .health-bar {
+          grid-row: 2/3;
+          grid-column: 1/3;
+          width: 250px;
+          height: 15px;
+          background-color: #999; }
+          #app main .health-bars-container .health-bar-container .health-bar span {
+            display: block;
+            height: 100%;
+            transition: width 100ms ease-in; }
+    #app main .action-center .new-game,
+    #app main .action-center .in-game {
+      gap: 1rem; }
+    #app main .game-log-container {
+      text-align: center;
+      border: 1px solid #DFDFDF; }
+      #app main .game-log-container .header {
+        padding: 0.5rem 0;
+        background-color: #F7F7F7;
+        border-bottom: 1px solid #DFDFDF;
+        color: #606060; }
+        #app main .game-log-container .header h2 {
+          letter-spacing: 3px; }
+      #app main .game-log-container .game-log {
+        height: 150px;
+        max-height: 150px;
+        overflow: auto; }
+        #app main .game-log-container .game-log .log {
+          padding: 5px 0; }
+      #app main .game-log-container .game-stats {
+        background-color: #F7F7F7;
+        gap: 0.5rem;
+        border-top: 1px solid #DFDFDF;
+        padding: 1rem 2rem; }
+        #app main .game-log-container .game-stats span {
+          flex-grow: 1;
+          padding: 5px 10px; }
+      #app main .game-log-container .yellow {
+        color: #856404;
+        background-color: #FFF3CD; }
+      #app main .game-log-container .green {
+        color: #155724;
+        background-color: #D4EDDA; }
+      #app main .game-log-container .red {
+        color: #721c24;
+        background-color: #f8d7da; }
+      #app main .game-log-container .blue {
+        color: #004085;
+        background-color: #cce5ff; }
+
+footer {
+  background-color: #DFDFDF;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-family: sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 90%; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 32px;
+  font-family: inherit;
+  background-color: #C83B50;
+  box-shadow: 4px 4px 0px #7b2230;
+  border: 2px solid #7b2230;
+  color: #fff; }
+  button img {
+    width: 58px; }
+
+.action-btn {
+  padding: 5px;
+  background-color: #F0F0F0; }
+  .action-btn:active {
+    background-color: #c7c7c7; }
+  .action-btn:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: transparent;
+    opacity: 0.5;
+    background-color: transparent; }
+
+.flex-center, #app header, #app main, #app main .health-bars-container, #app main .action-center .new-game,
+#app main .action-center .in-game, #app main .game-log-container .game-stats, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.img-btn {
+  width: 58px;
+  height: 58px; }
+
+.img-player {
+  width: 80px;
+  height: 80px; }
+
+h1 {
+  font-size: 300%; }
+
+h2 {
+  font-size: 200%; }
+
+span {
+  display: block; }
+
+small {
+  font-size: 110%;
+  font-weight: lighter;
+  font-style: italic;
+  background-color: #04a565;
+  color: #ffffff;
+  padding: 0 5px; }
+
+/*# sourceMappingURL=styles.css.map */
+

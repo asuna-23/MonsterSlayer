@@ -1,0 +1,174 @@
+/* Basic reset and structure */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Jost', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #1f3b57; /* Dark navy background */
+  color: #f5f5f5; /* Off-white text */
+}
+
+/* Header */
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 0.5rem;
+  background-color: #7ec9e7; /* Soft blue for Rimuru's slime form */
+  color: #1f3b57; /* Dark navy text */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Section containers */
+section {
+  width: 90%;
+  max-width: 40rem;
+  margin: auto;
+}
+
+/* Healthbars */
+.healthbar {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #7ec9e7; /* Soft blue border */
+  margin: 1rem 0;
+  background: #1f3b57; /* Dark background */
+}
+
+.healthbar__value {
+  background-color: #00a876; /* Default green health bar */
+  width: 100%;
+  height: 100%;
+}
+
+/* Rounded containers */
+.container {
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+  background-color: #f5f5f5; /* Off-white container */
+  color: #1f3b57; /* Dark text inside */
+}
+
+/* Health section */
+#monster h2,
+#player h2 {
+  margin: 0.25rem;
+  color: #1f3b57; /* Dark text */
+}
+
+/* Controls area */
+#controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  border: 1px solid #00a876;
+  background-color: #7ec9e7; /* Soft blue button */
+  color: #1f3b57; /* Dark text */
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover,
+button:active {
+  background-color: #b8f3ff; /* Light cyan on hover */
+  border-color: #b8f3ff;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+}
+
+button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  box-shadow: none;
+  color: #3f3f3f;
+  cursor: not-allowed;
+}
+
+/* Logs and Indicators */
+#log ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#log li {
+  margin: 0.5rem 0;
+}
+
+/* Logs color scheme */
+.log--player {
+  color: #7ec9e7; /* Soft blue */
+}
+
+.log--monster {
+  color: #f8c301; /* Gold-yellow for monster */
+}
+
+.log--damage {
+  color: #bf0100; /* Dark red for damage */
+}
+
+.log--heal {
+  color: #00a876; /* Healing green */
+}
+
+/* Flying indicators */
+#action-indicators {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.indicator {
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: flyAndFade 0.5s ease-in-out forwards;
+  position: absolute;
+  z-index: 100;
+}
+
+.indicator--player {
+  left: 20%;
+  color: #7ec9e7; /* Player indicator: Soft blue */
+}
+
+.indicator--monster {
+  right: 20%;
+  color: #f8c301; /* Monster indicator: Gold-yellow */
+}
+
+/* Keyframes for flying and fading */
+@keyframes flyAndFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
