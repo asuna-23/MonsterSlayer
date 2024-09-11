@@ -1,0 +1,96 @@
+<template>
+  <b-container class="mt-4">
+    <b-row>
+      <b-col>
+        <h2>Slambook Page</h2>
+        <b-form @submit="handleSubmit">
+          
+          <!-- Name Field -->
+          <b-form-group label="Name:" label-for="nameInput">
+            <b-form-input
+              id="nameInput"
+              v-model="formData.name"
+              placeholder="Enter your name"
+              required
+            ></b-form-input>
+          </b-form-group>
+
+          <!-- Gender (Radio Buttons) -->
+          <b-form-group label="Gender:">
+            <b-form-radio-group v-model="formData.gender" :options="genderOptions"></b-form-radio-group>
+          </b-form-group>
+
+          <!-- Favorite Food (Dropdown) -->
+          <b-form-group label="Favorite Food:">
+            <b-form-select v-model="formData.favoriteFood" :options="foodOptions"></b-form-select>
+          </b-form-group>
+
+          <!-- Love Languages (Checkboxes) -->
+          <b-form-group label="Love Languages:">
+            <b-form-checkbox-group v-model="formData.loveLanguages" :options="loveLanguagesOptions"></b-form-checkbox-group>
+          </b-form-group>
+
+          <!-- About Me (Textarea) -->
+          <b-form-group label="About Me:">
+            <b-form-textarea
+              v-model="formData.aboutMe"
+              placeholder="Tell us about yourself"
+              rows="3"
+            ></b-form-textarea>
+          </b-form-group>
+
+          <!-- Submit Button -->
+          <b-button type="submit" variant="primary">Submit</b-button>
+        </b-form>
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      formData: {
+        name: '',
+        gender: null,
+        favoriteFood: null,
+        loveLanguages: [],
+        aboutMe: '',
+      },
+      genderOptions: [
+        { text: 'Male', value: 'Male' },
+        { text: 'Female', value: 'Female' },
+        { text: 'Other', value: 'Other' }
+      ],
+      foodOptions: [
+        { text: 'Pizza', value: 'Pizza' },
+        { text: 'Burgers', value: 'Burgers' },
+        { text: 'Pasta', value: 'Pasta' },
+        { text: 'Sushi', value: 'Sushi' }
+      ],
+      loveLanguagesOptions: [
+        { text: 'Words of Affirmation', value: 'words_of_affirmation' },
+        { text: 'Acts of Service', value: 'acts_of_service' },
+        { text: 'Receiving Gifts', value: 'receiving_gifts' },
+        { text: 'Quality Time', value: 'quality_time' },
+        { text: 'Physical Touch', value: 'physical_touch' }
+      ]
+    };
+  },
+  methods: {
+    handleSubmit(evt) {
+      evt.preventDefault();
+      console.log("Submitted form data:", this.formData);
+      // Handle the submission logic, e.g., send to server or display in a modal
+    }
+  }
+};
+</script>
+
+<!-- Add necessary Bootstrap and Bootstrap-Vue CSS -->
+<style>
+h2 {
+  text-align: center;
+}
+</style>
